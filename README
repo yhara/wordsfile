@@ -6,7 +6,7 @@ Ramazeで書かれたシンプルな単語帳アプリです。
 
 = インストール
 
-  sudo gem install ramaze datamapper
+  sudo gem install ramaze datamapper do_sqlite3
 
 = 起動方法
 
