@@ -1,0 +1,15 @@
+<h2>単語一覧</h2>
+
+<div class="box">
+<ul>
+  <% @words.each do |word| %>
+    <li><%= a(word.name, :show, word.id) %></li>
+  <% end %>
+</ul>
+</div>
+
+<ul>
+  <li><%= a("(新規作成)", :new) %></li>
+  <li><%= a("(ランダム表示)", :random) %></li>
+</ul>
+
