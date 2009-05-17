@@ -1,0 +1,13 @@
+=========
+wordsfile
+=========
+
+Ramazeで書かれたシンプルな単語帳アプリです。
+
+= インストール
+
+  sudo gem install ramaze datamapper
+
+= 起動方法
+
+  ruby app.rb
