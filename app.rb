@@ -6,7 +6,6 @@ require 'datamapper'
 DataMapper.setup(:default, "sqlite3://#{__DIR__('words.db')}")
 class Word
   include DataMapper::Resource
-
   property :id, Serial
   property :name, String
   property :description, Text
@@ -33,7 +32,6 @@ class Words < Ramaze::Controller
       :name => request['name'],
       :description => request['description']
     })
-
     if word
       redirect r(:show, word.id)
     else
@@ -59,7 +57,6 @@ class Words < Ramaze::Controller
   def random
     at = rand(Word.count)
     @word = Word.first(:offset => at)
-
     render_view :show
   end
 end
