@@ -45,6 +45,17 @@ class Words < Ramaze::Controller
     @word = Word.get(id)
   end
 
+  def delete(id)
+    redirect_referer unless request.post?
+    word = Word.get(id)
+    if word
+      word.destroy
+      redirect r(:index)
+    else
+      redirect_referer
+    end
+  end
+
   def random
     at = rand(Word.count)
     @word = Word.first(:offset => at)

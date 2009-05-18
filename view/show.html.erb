@@ -1,9 +1,21 @@
 <div class="box">
   <h3><%=h @word.name %></h3>
 
-  <pre>
-<%=h @word.description %>
-  </pre>
+  <pre><%=h @word.description %></pre>
+
+  <a href="#" id="asdf">(削除)</a>
 </div>
 
 <%= a("一覧に戻る", :index) %>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#asdf").click(function(){
+    if(confirm('本当に?')){
+      $.post("<%= r(:delete, @word.id) %>", function(){
+        location.href = "<%= r(:index) %>";
+      });
+    }
+  });
+});
+</script>
